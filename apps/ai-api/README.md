@@ -2,47 +2,55 @@
 
 This directory contains the FastAPI app for AI or ML endpoints.
 
-To activate virtual environment installed:
-source /Users/trongphan/Desktop/LinkediNTU/apps/ai-api/venv/bin/activate 
+## Virtual Environment Activation
 
-### Installation
+To activate the virtual environment, run:
 
-We are currently using Poetry as the package manager for this project. To install the dependencies, run the following command:
+```bash
+source /Users/trongphan/Desktop/LinkediNTU/apps/ai-api/venv/bin/activate
+```
+Installation
+We are using Poetry as the package manager for this project. To install the dependencies, run:
 
 ```bash
 poetry install
 ```
 
-To activate the virtual environment, run the following command:
+Then, activate the virtual environment with:
 
 ```bash
 poetry shell
 ```
 
-### Running the app
+## Running the App
+>> Note: This part is still under development and may not be fully functional yet.
 
-Haven't touched this part yet so of course it's not working. But the plan is to run the app using the following command:
+To run the app, use the following command:
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
+## Project Structure
+The project structure is as follows:
 
-Structure of folder:
-| app -> run UI
-| training
-    | augmentor -> data augmentation
-    | finetuning 
-| utils
-    | analyser
-        | prompts.txt
-        | resume_analyser.py -> to analyse resume using LLMs
-    | data
-        | feedback -> store feed back in json format
-        | processed_resume -> store parsed resume in json format
-        | resume_pdf
-    | parser
-        | ResumeParser.py -> Resume Parser class
-    | section_classifier
-        | no idea what is this
-| venv -> virtual env
+```bash
+ai-api/
+├── app                # Contains the FastAPI application (and UI)
+├── training
+│   ├── augmentor      # Data augmentation scripts
+│   └── finetuning     # Fine-tuning scripts for models
+├── utils
+│   ├── analyser
+│   │   ├── prompts.txt
+│   │   └── resume_analyser.py  # Analyze resumes using LLMs
+│   ├── data
+│   │   ├── feedback          # Stores feedback in JSON format
+│   │   ├── processed_resume  # Stores parsed resumes in JSON format
+│   │   └── resume_pdf
+│   ├── parser
+│   │   └── ResumeParser.py   # Resume Parser class
+│   └── section_classifier
+│       └── (description pending)
+└── venv               # Virtual environment directory
+```
